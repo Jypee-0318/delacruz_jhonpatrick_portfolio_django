@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <link href="{% static 'output.css' %}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -22,18 +23,18 @@
     }
 
     @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
-}
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
 
-.letter {
+    .letter {
       display: inline-block;
       animation: bounce 1s ease-in-out infinite;
       opacity: 0;
@@ -55,21 +56,21 @@
       animation: gradientAnimation 10s ease infinite;
     }
     /* Adding bounce effect when the page loads */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
 
-.bounce {
-  animation: bounce 1s infinite;
-}
+    .bounce {
+      animation: bounce 1s infinite;
+    }
 
     /* Hero Section */
     #hero {
@@ -143,9 +144,9 @@
     <div class="flex items-center space-x-12 p-8 bg-white shadow-lg rounded-lg animate-fadeIn">
       <!-- Profile Picture -->
       <img 
-      src="/myproject/templates/pages/assets/pfp.jpg" 
+      src="{% static '/myproject/templates/pages/assets/pfp.jpg' %}" 
       alt="Person 1" 
-    class="w-56 h-56 rounded-full mx-auto transition-transform duration-500 hover:scale-110 hover:rotate-6 bounce"
+      class="w-56 h-56 rounded-full mx-auto transition-transform duration-500 hover:scale-110 hover:rotate-6 bounce"
       />
       <!-- Text Content -->
       <div class="text-left">
@@ -241,13 +242,13 @@
       <h2 class="text-3xl font-semibold text-gray-800 animate-fadeIn">Projects</h2>
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="p-6 bg-gray-50 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2y">
-          <img src="/myproject/templates/pages/assets/gallery.jpg" 
+          <img src="{% static 'pages/assets/gallery.jpg' %}" 
           alt="Person 1" 
           class="w-100 h-100 mx-auto mb-10 border-4 border-rounded">
           <p class="mt-4 font-bold text-gray-800">Image Gallery</p>
         </div>
         <div class="p-6 bg-gray-50 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
-          <img src="/myproject/templates/pages/assets/car.jpg" 
+          <img src="{% static 'pages/assets/car.jpg' %}" 
           alt="car" 
           class="w-100 h-100 mx-auto mb-10 border-4 border-rounded">
           <p class="mt-4 font-bold text-gray-800">Meow</p>
@@ -296,6 +297,6 @@
     <p>&copy; 2024 Jaypee. All rights reserved.</p>
   </footer>
 
-  <script src="/src/script.js"></script> 
+  <script src="{% static 'src/script.js' %}"></script> 
 </body>
 </html>
