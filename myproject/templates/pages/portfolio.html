@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  
+  <title>Portfolio</title>
 </head>
 
 <body class="bg-gray-50 font-poppins scroll-smooth gradient-background">
@@ -16,7 +16,7 @@
   <nav class="bg-none shadow-lg fixed w-full z-10 top-0">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between items-center py-4">
-        <div class="flex items-center">
+        <div class="flex items-center">   
           <!-- Logo -->
           <a href="#" class="text-2xl font-bold text-blow">Jaypee</a>
         </div>
@@ -27,6 +27,8 @@
           <a href="#skills" class="nav-link text-blow hover:text-lightpurple transition-colors duration-200">Skills</a> 
           <a href="#projects" class="nav-link text-blow hover:text-lightpurple transition-colors duration-200">Projects</a>  
           <a href="#contact" class="nav-link text-blow hover:text-lightpurple transition-colors duration-200">Contact</a>
+          <a href="{% url 'portfolio:dashboard' %}" class="nav-link text-blow hover:text-lightpurple transition-colors duration-200">Statistics</a>
+          <a href = "{% url 'portfolio:index' %}" class="nav-link text-blow hover:text-lightpurple transition-colors duration-200">Homepage</a>
         </div>
         <!-- Hamburger Menu -->
         <div class="md:hidden">
@@ -49,7 +51,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="nav-link text-center py-20 px-6 h-screen flex flex-col justify-center items-center">
+  <section id="hero" class="text-center py-20 px-6 h-screen flex flex-col justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-4xl font-bold text-white md:text-6xl transition duration-500 ease-in-out transform hover:text-lightpurple">
         <span class="letter" style="animation-delay: 0s;">W</span>
@@ -62,21 +64,21 @@
         <span class="letter" style="animation-delay: 0.7s;">!</span>
       </h1>
       <div class="mt-8 transition duration-500 ease-in-out transform hover:scale-105">
-        <a href="#aboutme" class="nav-link px-8 py-3 bg-gray-50 font-poppins scroll-smooth gradient-background text-center text-white rounded-full transition duration-500 ease-in-out transform hover:scale-105 hover:text-blow">
+        <a href="#aboutme" class="px-8 py-3 bg-white text-purple-600 font-semibold rounded-full transition duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-600 hover:text-white">
           Get To Know Me!
         </a>
       </div>
     </div>
   </section>
 
-  <!-- aboutme Section -->
+  <!-- About Me Section -->
   <section id="aboutme" class="bg-white text-center h-screen flex justify-center items-center">
     <div class="flex items-center space-x-12 p-8 bg-white shadow-lg rounded-lg animate-fadeIn">
       <!-- Profile Picture -->
       <img 
       src="{% static 'pfp.jpg' %}" 
-      alt="Person 1" 
-      class="w-56 h-56 rounded-full mx-auto transition-transform duration-500 hover:scale-110 hover:rotate-6 bounce"
+      alt="Profile Picture" 
+      class="w-56 h-56 rounded-full mx-auto transition-transform duration-500 hover:scale-110 hover:rotate-6"
       />
       <!-- Text Content -->
       <div class="text-left">
@@ -92,31 +94,29 @@
           <!-- Download CV Button -->
           <button 
             id="downloadCV" 
-            class="px-8 py-3 bg-gray-50 text-white rounded-full gradient-background transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2"
+            class="px-8 py-3 bg-purple-600 text-white rounded-full transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700 hover:shadow-lg"
           >
             Download CV
           </button>
           <!-- Contact Me Button -->
           <a 
             href="#contact" 
-            class="nav-link px-8 py-3 bg-gray-50 font-poppins scroll-smooth gradient-background text-center text-white rounded-full transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2"
+            class="px-8 py-3 bg-purple-600 text-white rounded-full transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700 hover:shadow-lg"
           >
             Contact Me
           </a>
         </div>
       </div>
     </div>
-    <!-- <div class="flex items-center space-x-8 p-8 bg-white shadow-lg rounded-lg animate-fadeIn">
-      My Hobbies
-    </div> -->
   </section>
   
+  <!-- Skills Section -->
   <section id="skills" class="bg-gray-100 py-20 px-6 h-screen flex flex-col justify-center items-center">
     <div class="max-w-7xl mx-auto text-center">
         <h2 class="text-4xl font-semibold text-gray-800 mb-12">Skills</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <!-- Skill 1 -->
-            <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+            <div class="bg-purple-600 shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">
                 <div class="flex justify-center mb-6">
                   <i class="fa-brands fa-html5 text-6xl text-white"></i>
                 </div>
@@ -124,7 +124,7 @@
                 <p class="text-white">Expert in structuring web pages with semantic HTML.</p>
             </div>
             <!-- Skill 2 -->
-            <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+            <div class="bg-purple-600 shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">
                 <div class="flex justify-center mb-6">
                   <i class="fa-brands fa-css3-alt text-6xl text-white"></i>
                 </div>
@@ -132,7 +132,7 @@
                 <p class="text-white">Experienced with styling web pages using CSS and frameworks like Tailwind CSS.</p>
             </div>
             <!-- Skill 3 -->
-            <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+            <div class="bg-purple-600 shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">
                 <div class="flex justify-center mb-6">
                   <i class="fa-brands fa-js text-6xl text-white"></i>
                 </div>
@@ -140,7 +140,7 @@
                 <p class="text-white">Skilled in JavaScript for building interactive web applications.</p>
             </div>
             <!-- Skill 4 -->
-            <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-25">
+            <div class="bg-purple-600 shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">
                 <div class="flex justify-center mb-6">
                   <i class="fa-brands fa-angular text-6xl text-white"></i>
                 </div>
@@ -148,7 +148,7 @@
                 <p class="text-white">Proficient in building dynamic, single-page applications using Angular.</p>
             </div>
             <!-- Skill 5 -->
-            <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+            <div class="bg-purple-600 shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">
                 <div class="flex justify-center mb-6">
                     <i class="fa-brands fa-php text-6xl text-white"></i>
                 </div>
@@ -156,7 +156,7 @@
                 <p class="text-white">Experienced in development with PHP.</p>
             </div>
             <!-- Skill 6 -->
-            <div class="gradient-background shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+            <div class="bg-purple-600 shadow-lg rounded-lg p-6 transition-all duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">
                 <div class="flex justify-center mb-6">
                   <i class="fa-brands fa-github text-6xl text-white"></i>
                 </div>
@@ -166,21 +166,22 @@
         </div>
     </div>
   </section>  
-  <!-- Project Section -->
+
+  <!-- Projects Section -->
   <section id="projects" class="bg-white text-center py-20 px-6 animate-fadeIn h-screen flex flex-col justify-center items-center">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold text-gray-800 animate-fadeIn">Projects</h2>
+      <h2 class="text-4xl font-semibold text-gray-800 mb-12">Projects</h2>
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-6 bg-gray-50 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2y">
+        <div class="p-6 bg-gray-50 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-lg">
           <img src="{% static 'gallery.jpg' %}" 
-          alt="Person 1" 
-          class="w-100 h-100 mx-auto mb-10 border-4 border-rounded">
+          alt="Gallery Project" 
+          class="w-full h-64 object-cover rounded-lg mb-4">
           <p class="mt-4 font-bold text-gray-800">Image Gallery</p>
         </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:text-blow hover:shadow-lg hover:-translate-y-2">
+        <div class="p-6 bg-gray-50 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 hover:shadow-lg">
           <img src="{% static 'car.jpg' %}" 
-          alt="car" 
-          class="w-100 h-100 mx-auto mb-10 border-4 border-rounded">
+          alt="Car Project" 
+          class="w-full h-64 object-cover rounded-lg mb-4">
           <p class="mt-4 font-bold text-gray-800">Meow</p>
         </div>
       </div>
@@ -188,7 +189,7 @@
   </section>
 
   <!-- Contact Section -->
-<section id="contact" class="bg-gray-800 text-white py-20 px-6 h-screen flex flex-col justify-center items-center">
+<section id="contact" class="bg-gray-70 py-4 font-poppins scroll-smooth gradient-background">
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-4xl font-semibold mb-12">Contact Me</h2>
     <p class="text-xl mb-8">Feel free to reach out if you have any questions or want to collaborate!</p>
@@ -199,31 +200,31 @@
         <!-- Name -->
         <div class="mb-4">
           <label for="name" class="block text-gray-800 font-semibold">Name</label>
-          <input type="text" id="name" name="name" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg text-blow focus:outline-none focus:border-purple-500">
+          <input type="text" id="name" name="name" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:border-purple-500">
         </div>
         <!-- Email -->
         <div class="mb-4">
           <label for="email" class="block text-gray-800 font-semibold">Email</label>
-          <input type="email" id="email" name="email" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg text-blow focus:outline-none focus:border-purple-500">
+          <input type="email" id="email" name="email" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:border-purple-500">
         </div>
       </div>
 
       <!-- Message -->
       <div class="mb-4">
         <label for="message" class="block text-gray-800 font-semibold">Message</label>
-        <textarea id="message" name="message" rows="4" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg text-blow focus:outline-none focus:border-purple-500"></textarea>
+        <textarea id="message" name="message" rows="4" required class="w-full mt-2 p-4 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:border-purple-500"></textarea>
       </div>
 
       <!-- Submit Button -->
       <div class="text-center">
-        <button type="submit" class="nav-link px-8 py-3 bg-gray-50 font-poppins scroll-smooth gradient-background text-center text-white rounded-full transition duration-500 ease-in-out transform hover:scale-105 hover:text-blow">Send Message</button>
+        <button type="submit" class="px-8 py-3 bg-purple-600 text-white rounded-full transition duration-500 ease-in-out transform hover:scale-105 hover:bg-purple-700">Send Message</button>
       </div>
     </form>
   </div>
 </section>
 
   <!-- Footer -->
-  <footer id="footer" class="py-10 bg-gray-800 text-white text-center animate-fadeIn">
+  <footer id="footer" class="py-10 bg-gray-800 text-white text-center">
     <p>&copy; 2024 Jaypee. All rights reserved.</p>
   </footer>
 

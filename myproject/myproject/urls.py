@@ -21,7 +21,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portfolio.urls')),  # Adjust this line to include your app's URLs
+    path('', include('portfolio.urls', namespace="index")),
 ]
 
 if settings.DEBUG:
